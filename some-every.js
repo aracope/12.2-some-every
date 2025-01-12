@@ -6,13 +6,21 @@ Examples:
     hasOddNumber([2,2,2,2,2,4]) // false
 */
 
+// function hasOddNumber(arr) {
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i] % 2 !== 0) {
+//           return true;
+//         }
+//         return false;
+//     }
+// }
+// console.log(hasOddNumber([2,2,2,2,2,4]));
+// console.log(hasOddNumber([1,2,2,2,2,2,4]));
+
 function hasOddNumber(arr) {
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] % 2 !== 0){
-          return true;
-        }
-        return false;
-    }
+    return arr.some(function(val){
+        return val % 2 !== 0;
+    });   
 }
 console.log(hasOddNumber([2,2,2,2,2,4]));
 console.log(hasOddNumber([1,2,2,2,2,2,4]));
@@ -26,7 +34,14 @@ Examples:
     hasAZero(1212121) // false
 */
 
-function hasAZero(num) {}
+function hasAZero(num) {
+    return ("" + num).split("").some(function(val) {
+        return val === '0';
+    }); 
+}
+console.log(hasAZero(3332123213101232321));
+console.log(hasAZero(333212321311232321));
+
 
 /*
 Write a function called hasOnlyOddNumbers which accepts an array and returns true if every single number in the array is odd. If any of the values in the array are not odd, the function should return false. 
