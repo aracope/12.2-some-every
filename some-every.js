@@ -18,9 +18,9 @@ Examples:
 // console.log(hasOddNumber([1,2,2,2,2,2,4]));
 
 function hasOddNumber(arr) {
-    return arr.some(function(val){
-        return val % 2 !== 0;
-    });   
+  return arr.some(function(val) {
+    return val % 2 !== 0;
+  });   
 }
 console.log(hasOddNumber([2,2,2,2,2,4]));
 console.log(hasOddNumber([1,2,2,2,2,2,4]));
@@ -35,9 +35,9 @@ Examples:
 */
 
 function hasAZero(num) {
-    return ("" + num).split("").some(function(val) {
-        return val === '0';
-    }); 
+  return ("" + num).split("").some(function(val) {
+    return val === '0';
+  }); 
 }
 console.log(hasAZero(3332123213101232321));
 console.log(hasAZero(333212321311232321));
@@ -51,7 +51,13 @@ Examples:
     hasOnlyOddNumbers([1,2,3,5,7]) // false
 */
 
-function hasOnlyOddNumbers(arr) {}
+function hasOnlyOddNumbers(arr) {
+  return arr.every(function(val) {
+    return val % 2 !== 0;
+  }); 
+}
+console.log(hasOnlyOddNumbers([1,2,3,5,7]));
+console.log(hasOnlyOddNumbers([1,3,5,7]));
 
 /*
 Write a function called hasNoDuplicates which accepts an array and returns true if there are no duplicate values (more than one element in the array that has the same value as another). If there are any duplicates, the function should return false.
